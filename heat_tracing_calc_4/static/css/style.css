@@ -1,0 +1,89 @@
+*{
+	font-family: candara;
+	
+}
+
+h1{
+	border: 1px solid;
+	padding: 0.5em;
+	background-color: #e6f2f7;
+	margin-bottom: 0px;
+	text-align: center;
+
+
+}
+
+#result{
+
+	display: grid;
+	grid-template-columns: 0.7fr 1fr ;
+	grid-gap: 0em;
+	background-color: #DADDDD;
+	border: 1px solid;
+	border-width: 0px 1px 1px 1px ;
+	padding: 1em;
+
+}
+
+
+#trace_form{
+	text-align: center;
+	display: grid;
+	/*grid-template-columns: 75px 100px 125px 150px 150px 150px 125px 125px 125px 125px 100px;*/
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+	grid-gap: 0.5em;
+	border: 1px solid;
+	border-width: 0px 1px 1px 1px ;
+	padding: 1em;
+	background-color: #DADDDD;
+
+
+}
+
+
+#form1{
+	/*text-align: right;*/
+
+	display: grid;
+	width: 600px;
+	grid-template-columns: 300px 150px auto;
+	grid-gap: 0.5em;
+	padding: 1em;
+/*	border: 1px solid;	
+	border-width: 0px 1px 1px 1px ;*/
+	background-color: #DADDDD;
+
+
+}
+
+input, select{
+	
+	outline: 0;
+    border-width: 0 0 1px;
+    border-color: grey;
+    text-align: center;
+  /*  background-color: #DADDDD ;*/
+}
+
+
+
+#total_steam{
+	margin-left: 1400px;
+	font-weight: bold;
+}
+
+
+#calculate{
+	width: 500px;
+	font-weight: bold;
+	height: 30px;
+	font-size: 15px;
+	background-color: #c7ebe8;
+}
+
+#num_segment, #wind_velocity,#insulation_thickness, #pipe_dia{
+	text-indent: 60px;
+}
+
+
+

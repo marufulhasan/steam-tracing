@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Tracing Calc</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+      
+   <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+   </script>
+
+</head>
+<body>
+<h1>Steam Tracing Calculation</h1>
+<div id=result>
+	<div>
+		<form id= "form1" method= "POST"  action= "">
+
+				<label for="steam_pressure">Available Steam Pressure (psig)</label> <input id="steam_pressure" name="steam_pressure" required type="text" value="150"> <span></span>
+
+				<label for="steam_temp">Steam Temperature (°F)</label> <input id="steam_temp" name="steam_temp" required type="text" value="366"> <span></span>
+
+				<label for="amb_temp">Minimum Ambient Temperature (°F)</label> <input id="amb_temp" name="amb_temp" required type="text" value="20"> <span></span>
+
+				<label for="wind_velocity">Wind Velocity (mph)</label>  <select  id="wind_velocity" name="wind_velocity"><option value="0">0</option><option value="5">5</option><option value="10" selected="selected">10</option><option value="15">15</option></select> <span></span>
+
+				<span>Number of Line Segment</span>
+				<span id="num_segment"> 1  </span>
+				<input id="add" class="set_form" name="add" type="button" value="Add">
+	
+		</form>
+	</div>
+	<div id= "output">
+		
+	</div>
+
+</div>
+<form id = "trace_form" method= "POST"  action= "">
+ 		<label for="line_id"><strong>Line ID</strong></label>	
+		<label for="pipe_length"><strong>Pipe Length, ft</strong></label>
+		<label for="pipe_dia"><strong>Pipe Diameter, inch</strong></label>
+		<label for="insulation_type"><strong>Insulation Type</strong></label>
+		<label for="insulation_thickness"><strong>Insulation Thickness, inch</strong></label>
+		<label for="maintain_temp"><strong>Maintain Temperature, °F</strong></label>
+		<span><strong>Trace Req'd, (num)-size</strong></span>
+		<span><strong>Max. Tracer Length, ft</strong></span>
+		<span><strong>Heat loss, Btu/ lin. Ft</strong></span>
+		<span><strong>Steam Req'd, lb/hr</strong></span>
+		<span ></span>
+
+
+		<input class= "pipe_1" id="line_id" name="line_id" type="text" value="">
+		<input class= "pipe_1" id="pipe_length" name="pipe_length" required type="text" value="1000">
+
+
+		<select class= "pipe_1"  id="pipe_dia" name="pipe_dia"><option value="0.5">1/2</option><option value="0.75">3/4</option><option value="1">1</option><option value="2">2 </option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8" selected="selected">8</option><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="24">24</option><option value="30">30</option></select>
+
+		<select class= "pipe_1"  id="insulation_type" name="insulation_type"><option value="cal_si">Calcium Silicate</option><option value="fiber_glass">Fiberglass</option></select>
+		<select class= "pipe_1"  id="insulation_thickness" name="insulation_thickness"><option value="1">1</option><option value="1.5">1 1/2</option><option value="2" selected="selected">2</option><option value="2.5">2 1/2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+
+		<input class= "pipe_1" id="maintain_temp" name="maintain_temp" required type="text" value="150">
+		<span class= "pipe_1" name= "trace"></span>
+		<span class= "pipe_1" name = "tracer_length"></span>
+		<span class= "pipe_1" name= "heat_loss"></span>
+		<span class= "pipe_1" name= "steam_require"></span>
+		<input class= "pipe_1" type="button" value="Remove">
+
+		
+
+</form>
+<br>
+<input id="calculate" type="submit" form= "trace_form" value="Calculate">
+<span id= total_steam></span>
+
+</body>
+<script src="{{ url_for('static', filename='js/add_field.js') }}"></script>
+<script src="{{ url_for('static', filename='js/input_check.js') }}"></script>
+<script src="{{ url_for('static', filename='js/set_sat_temp.js') }}"></script>
+<script src="{{ url_for('static', filename='js/update_button.js') }}"></script>
+<script src="{{ url_for('static', filename='js/trace_calc.js') }}"></script>
+
+<script type="text/javascript">
+
+  
+</script>
+
+</html>
